@@ -1,35 +1,36 @@
 using System;
 using Xunit;
-using Calculator;
+using Calc;
+
 namespace TestsCalc
 {
-    public class UnitTest1
+    public class CalcTests
     {
         [Fact]
         public void CreateCalculatorTest()
         {
-            var calc = new Calculator.Calculator();
+            var calc = new Calc.Calculator();
             Assert.NotNull(calc);
         }
 
         [Fact]
         public void CreateCalculatorTest_defaultVar()
         {
-            var calc = new Calculator.Calculator();
+            var calc = new Calc.Calculator();
             Assert.Equal("0", calc.ScreenBuffer);
         }
         [Fact]
         public void TestStartingState()
         {
-            var calc = new Calculator.Calculator();
-            Assert.Equal(WordSizeType.QWORD, calc.State.WordSize);
-            Assert.Equal(InsModeType.DEC, calc.State.InsMode);
+            var calc = new Calculator();
+            Assert.Equal(WSType.QWORD, calc.State.Ws);
+            Assert.Equal(IMType.DEC, calc.State.Im);
         }
 
         [Fact]
         public void CreateCalculatorTestParseString()
         {
-            var calc = new Calculator.Calculator();
+            var calc = new Calculator();
             calc.ParseInput("4");
             Assert.Equal("4" , calc.ScreenBuffer);
         }

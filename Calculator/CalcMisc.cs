@@ -4,24 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calculator
+namespace Calc
 {
-    public enum WordSizeType
+    public enum WSType
     {
         QWORD =8 ,DWORD = 4, WORD = 2, BYTE = 1
     }
-    public enum InsModeType
+    public enum IMType
     {
         HEX = 16, DEC = 10, OCT = 8, BIN = 2
     }
     public class State
     {
-        public InsModeType InsMode;
-        public WordSizeType WordSize;
-        public State(InsModeType ins, WordSizeType wordSize)
+        public IMType Im;
+        public WSType Ws;
+        public State(IMType ins, WSType ws)
         {
-            InsMode = ins;
-            WordSize = wordSize;
+            Im = ins;
+            Ws = ws;
         }
     }
 }

@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-namespace Calculator
+namespace Calc
 {
     public class Calculator
     {
         
-        public string ScreenBuffer { get => _screenBuffer; set => _screenBuffer = value; }
-        public State State { get => _state; set => _state = value; }
+        public string ScreenBuffer { get; set; }
+
+        public State State { get; set; }
 
         public void ParseInput(string v)
         {
@@ -17,13 +18,8 @@ namespace Calculator
         }
         public Calculator()
         {
-            _screenBuffer = "0";
-            State = new State(InsModeType.DEC, WordSizeType.QWORD);
+            ScreenBuffer = "0";
+            State = new State(IMType.DEC, WSType.QWORD);
         }
-        ///
-        string _screenBuffer;
-        State _state;
-
-        
     }
 }
