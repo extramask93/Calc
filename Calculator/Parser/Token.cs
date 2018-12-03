@@ -68,6 +68,52 @@ namespace Calc.Parser
                     NextChar();
                     _currentToken = Token.Sub;
                     return;
+                case '*':
+                    NextChar();
+                    _currentToken = Token.Mul;
+                    return;
+                case '/':
+                    NextChar();
+                    _currentToken = Token.Div;
+                    return;
+                case '%':
+                    NextChar();
+                    _currentToken = Token.Mod;
+                    return;
+                case '|':
+                    NextChar();
+                    _currentToken = Token.Or;
+                    return;
+                case '&':
+                    NextChar();
+                    _currentToken = Token.And;
+                    return;
+                case '^':
+                    NextChar();
+                    _currentToken = Token.Xor;
+                    return;
+                case '~':
+                    NextChar();
+                    _currentToken = Token.Not;
+                    return;
+                case '<':
+                    NextChar();
+                    NextChar();
+                    _currentToken = Token.Lsh;
+                    return;
+                case '>':
+                    NextChar();
+                    NextChar();
+                    _currentToken = Token.Rsh;
+                    return;
+                case '(':
+                    NextChar();
+                    _currentToken = Token.Pleft;
+                    return;
+                case ')':
+                    NextChar();
+                    _currentToken = Token.PRight;
+                    return;
             }
 
             if (char.IsDigit(_currernChar))

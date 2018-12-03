@@ -22,7 +22,7 @@ namespace TestsCalc
         [Fact]
         public void TestStartingState()
         {
-            var calc = new Calculator();
+            var calc = new Calc.Calculator();
             Assert.Equal(WSType.QWORD, calc.State.Ws);
             Assert.Equal(IMType.DEC, calc.State.Im);
         }
@@ -30,7 +30,7 @@ namespace TestsCalc
         [Fact]
         public void CreateCalculatorTestParseString()
         {
-            var calc = new Calculator();
+            var calc = new Calc.Calculator();
             calc.ParseInput("4");
             Assert.Equal("4" , calc.ScreenBuffer);
         }
